@@ -12,16 +12,27 @@ export default function Navbar() {
       });
   }, []);
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           Product Catalog
         </Link>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -29,10 +40,13 @@ export default function Navbar() {
               >
                 Categories
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 {categories.map((category, index) => (
                   <li key={index}>
-                    <Link class="dropdown-item" to={`/category/${category}`}>
+                    <Link
+                      className="dropdown-item"
+                      to={`/category/${category}`}
+                    >
                       {category}
                     </Link>
                   </li>
